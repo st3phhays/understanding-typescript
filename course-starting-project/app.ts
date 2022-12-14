@@ -2,16 +2,26 @@
     // name: string;
     // age: number;
 // } = {
-const person: {
-    name: string;
-    age: number, 
-    hobbies: string[],
-    role: [number, string] // tuple type
-} = {
+// const person: {
+    // name: string;
+    // age: number, 
+    // hobbies: string[],
+    // role: [number, string] // tuple type
+// } = {
+    // name: 'Steph',
+    // age: 32,
+    // hobbies: ['Coding', 'Gaming'],
+    // role: [2, 'developer']
+// }
+
+enum Role { ADMIN, READ_ONLY, AUTHOR };
+// enum Role { ADMIN = 5, READ_ONLY, AUTHOR }; Can assign values if wanted
+
+const person = {
     name: 'Steph',
     age: 32,
     hobbies: ['Coding', 'Gaming'],
-    role: [2, 'developer']
+    role: Role.ADMIN
 }
 
 // person.role.push('admin');
@@ -25,4 +35,8 @@ console.log(person.name);
 
 for (const hobby of person.hobbies) {
     console.log(hobby.toUpperCase());
+}
+
+if (person.role === Role.AUTHOR) {
+    console.log('is author');
 }

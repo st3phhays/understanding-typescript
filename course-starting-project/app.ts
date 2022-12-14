@@ -8,3 +8,12 @@ const printResult = (num: number) => {
 }
 
 printResult(add(5, 20));
+
+// Describes what type of function is allowed to be used
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult !! ERROR !!
+// combineValues === 5; !! ERROR !!
+
+console.log(combineValues(5, 20));
